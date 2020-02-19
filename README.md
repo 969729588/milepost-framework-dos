@@ -1,4 +1,5 @@
-#milepost-framework
+
+# milepost-framework
 
 
 >作者 huarf
@@ -22,7 +23,7 @@ milepost-framework 是一套微服务框架，基于Greenwich.RELEASE版本的Sp
 
 使用本框架可以专注于业务应用的构建，减少了很多重复性的工作，提高效率。
 
-#1、基础服务部署
+# 1、基础服务部署
 
 * [EurekaServer部署](http://)
 * [JWT服务部署]()
