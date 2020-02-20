@@ -42,10 +42,10 @@ run.sh restart
 
 | 参数名                      | 必填 | 默认值 | 说明                                                         |
 | ---------------------------| ---- | ------ | ------------------------------------------------------------ |
-|spring.profiles.active|是|  |配置文件环境，dev：开发环境；test：测试环境；prod：生产环境
-|server.port|否|8761|服务端口
-|eureka.instance.ip-address|是|  |服务绑定ip，配置为服务器ip即可
-|eureka.server.enable-self-preservation|    否| true|    开启自我保护机制，true：开启；false：关闭
+|spring.profiles.active|是|  |配置文件环境，dev：开发环境；test：测试环境；prod：生产环境|
+|server.port|否|8761|服务端口|
+|eureka.instance.ip-address|是|  |服务绑定ip，配置为服务器ip即可|
+|eureka.server.enable-self-preservation|    否| true|    开启自我保护机制，true：开启；false：关闭|
 
 ## 5、验证
 
@@ -73,3 +73,5 @@ http://${eureka.instance.ip-address}:${server.port}/
 ![images/2.png](images/2.png)
 
 ## 6、Docker支持
+
+TBD
