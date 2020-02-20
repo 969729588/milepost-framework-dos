@@ -1,12 +1,8 @@
 
 # milepost-framework
 
-
->作者 huarf
-
-milepost-framework 是一套微服务框架，基于Greenwich.RELEASE版本的SpringCloud构建。
- 
-框架提供了微服务架构下开发常用的组件：
+milepost-framework 是一套微服务框架，基于SpringCloud的Greenwich.RELEASE版本构建， 
+在SpringCloud基础上增加了微服务架构下开发常用的组件：
 
 * 集群部署的多实例应用之间定时任务如何运行 
 * 集群部署的多实例应用如何像单实例应用那样实现同步代码块
@@ -19,13 +15,16 @@ milepost-framework 是一套微服务框架，基于Greenwich.RELEASE版本的Sp
 * Swagger
 * 日志
 * Flyaway
+* 、、、
 
 
 使用本框架可以专注于业务应用的构建，减少了很多重复性的工作，提高效率。
 
+本文档列出框架所涉及到的所有文档目录，所有文档均从这里进入。
+
 # 1、基础服务部署
 
-* [EurekaServer部署](http://)
+* [EurekaServer部署](baseServerDeploy/eurekaServer.md)
 * [JWT服务部署]()
 * [认证服务部署]()
 * [分布式事务服务端部署]()
