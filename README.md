@@ -26,8 +26,9 @@ milepost-framework 是一套微服务框架，基于SpringCloud的Greenwich.RELE
 
 * [EurekaServer部署](baseServerDeploy/eurekaServer.md)
 * [JWT服务部署](baseServerDeploy/jwtServer.md)
+* [分布式事务服务端部署](baseServerDeploy/seataServer.md)
 * [认证服务部署]()
-* [分布式事务服务端部署]()
+
 
 
 

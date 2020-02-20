@@ -66,7 +66,7 @@ run.sh restart
 
 服务启动成功后，会在jar包所在的目录下生成logs文件夹，里面存放着日志文件，使用下面的命令查看日志。
 ```bash
-tail -f logs/milepost-eureka.log -n 300
+tail -f logs/milepost-auth.log -n 300
 ```
 日志中有
 ```html
@@ -84,6 +84,15 @@ http://${eureka.instance.ip-address}:${server.port}/milepost-auth/oauth/token?us
 ```
 返回如下json数据表示部署成功。
 
-![discovery.png](images/3.png)
+```html
+{
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...",
+    "token_type": "bearer",
+    "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...",
+    "expires_in": 7199,
+    "scope": "test",
+    "jti": "a3f1913f-e726-4fb7-ad6a-515182cee75f"
+}
+```
 
 ## 6、Docker支持
