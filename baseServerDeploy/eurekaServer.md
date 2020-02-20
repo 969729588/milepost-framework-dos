@@ -69,7 +69,7 @@ http://${eureka.instance.ip-address}:${server.port}/
 ```
 看到如下页面表示部署成功。
 
-![](images/1.png)
-![](images/2.png)
+![images/1.png](images/1.png)
+![images/2.png](images/2.png)
 
 ## 6、Docker支持
