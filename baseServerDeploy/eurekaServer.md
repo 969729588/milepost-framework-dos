@@ -58,7 +58,7 @@ tail -f logs/milepost-eureka.log -n 300
 ```
 日志中有
 ```html
-[INFO ] [com.milepost.core.MilepostApplication             : 844 ] - 服务启动完毕。
+...[INFO ] [com.milepost.core.MilepostApplication             : 844 ] - 服务启动完毕。
 ```
 字样表示服务启动成功。
 
