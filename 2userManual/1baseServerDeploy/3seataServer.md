@@ -1,8 +1,9 @@
 # 分布式事务服务端部署
 
+> 本文档介绍分布式事务服务端的部署。
+
 > 本框架使用1.0.0版本的[seata](https://seata.io/zh-cn/index.html)作为分布式事务解决方案， 
 本文档所有资料均来自[seata官方文档](https://seata.io/zh-cn/docs/overview/what-is-seata.html)。
-
 
 ## 1、软件环境
 
@@ -235,8 +236,8 @@ nohup ./bin/seata-server.sh -h 注册到EurekaServer的ip &
 ```
 
 * 停止
+使用 kill -15 pid 杀掉进程即可。
 
-杀掉进程即可
 
 ## 6、启动脚本中的参数
 
@@ -257,6 +258,10 @@ nohup ./bin/seata-server.sh -h 注册到EurekaServer的ip &
 tail -f logs/seata/seata-server.log -n 300
 ```
 
-## 8、Docker支持
+## 8、注意事项
+分布式事务服务端不需要配置租户、标签、权重等参数，所有实例共用一个分布式事务服务端。
+
+
+## 9、Docker支持
 
 TBD

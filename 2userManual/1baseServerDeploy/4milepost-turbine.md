@@ -1,4 +1,8 @@
-# EurekaServer部署
+# Hystrix Turbine监控服务部署
+
+> 本文档介绍milepost-turbine服务的部署。
+
+> 本框架使用org.springframework.cloud:spring-cloud-starter-netflix-turbine:2.1.0.RELEASE实现监控，并更改了部分代码来满足本框架中的一些概念和功能。
 
 ## 1、软件环境
 * JDK1.8+
@@ -7,7 +11,7 @@
 
 | 文件名                     | 说明       |
 | -------------------------- | ---------- |
-| milepost-eureka-1.0.0.100.jar | 程序jar包 |
+| milepost-turbine-1.0.0.100.jar | 程序jar包 |
 | run.sh                     | 启停脚本   |
 
 ## 3、服务启停
@@ -16,6 +20,12 @@
 
 ```bash
 run.sh start
+```
+
+* 查看
+
+```bash
+run.sh status
 ```
 
 * 停止
@@ -43,9 +53,12 @@ run.sh restart
 | 参数名                      | 必填 | 默认值 | 说明                                                         |
 | ---------------------------| ---- | ------ | ------------------------------------------------------------ |
 |spring.profiles.active|是|  |配置文件环境，dev：开发环境；test：测试环境；prod：生产环境|
-|server.port|否|8761|服务端口|
+|server.port|否|8769|服务端口|
+|eureka.client.service-url.defaultZone|是|   |EurekaServer地址|
 |eureka.instance.ip-address|是|  |服务绑定ip，配置为服务器ip即可|
-|eureka.server.enable-self-preservation|    否| true|    开启自我保护机制，true：开启；false：关闭|
+|multiple-tenant.tenant|否|default|本监控服务实例的租户，不区分大小写，不支持逗号分割，控制这个监控服务实例能监控那些服务实例。|
+|turbine.app-config|    否| _all_|要监控的服务的名称(spring.application.name)，支持多个服务名称用逗号分割，默认值“_all_”表示监控本租户下的所有服务实例|
+
 
 ## 5、验证
 
@@ -54,23 +67,24 @@ run.sh restart
 
 服务启动成功后，会在jar包所在的目录下生成logs文件夹，里面存放着日志文件，使用下面的命令查看日志。
 ```bash
-tail -f logs/milepost-eureka.log -n 300
+tail -f logs/milepost-turbine.log -n 300
 ```
 日志中有
 ```html
-...[INFO ] [com.milepost.core.MilepostApplication             : 844 ] - 服务启动完毕。
+...[INFO ] [com.milepost.core.MilepostApplication             : 846 ] - 服务启动完毕。
 ```
 字样表示服务启动成功。
 
-* 访问首页
+* 访问监控页面
 
 ```
-http://${eureka.instance.ip-address}:${server.port}/
+http(s)://${eureka.instance.ip-address}:${server.port}/${context-path}/hystrix
 ```
 看到如下页面表示部署成功。
 
-![images/1.png](images/1.png)
-![images/2.png](images/2.png)
+![images/4.png](images/4.png)
+
+具体使用方法见[Hystrix Turbine](../../3guideForDevelopment/2distributedDevelopment/9hystrixTurbine.md)
 
 ## 6、Docker支持
 
