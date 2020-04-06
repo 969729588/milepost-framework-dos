@@ -28,7 +28,7 @@
 
 # 3、开发指南
 ## 3.1、常规开发
-3.1.1、[==使用本框架构建一个项目并打包发布到Linux上](3guideForDevelopment/1commonDevelopment/1projectExample.md)<br>
+<!--3.1.1、[使用本框架构建一个项目并打包发布到Linux上](3guideForDevelopment/1commonDevelopment/1projectExample.md)<br>-->
 3.1.2、[框架日志](3guideForDevelopment/1commonDevelopment/2logger.md)<br>
 3.1.3、[Flyway](3guideForDevelopment/1commonDevelopment/3flyway.md)<br>
 3.1.4、[发送邮件](3guideForDevelopment/1commonDevelopment/4senderMail.md)<br>
@@ -66,8 +66,10 @@
 3.2.12、[SpringCloud Sleuth](3guideForDevelopment/2distributedDevelopment/12springCloudSleuth.md)<br>
 
 
+<!--
 # 4、其他
-## --4.1、框架测试
+## 4.1、框架测试
+-->
 
 <!--
 # 5、框架参考
