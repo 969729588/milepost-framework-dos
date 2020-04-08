@@ -75,3 +75,14 @@ milepost-framework
 个 
 好框架。
 
+## 9、加粗字体
+
+**加粗**字体
+
+## 10、字体颜色
+
+<font color=#0099ff size=7 face="黑体">color=#0099ff size=72 face="黑体"</font>
+<font color=#00ffff size=72>color=#00ffff</font>
+<font color=gray size=72>color=gray</font>
+
+
