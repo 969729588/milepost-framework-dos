@@ -6,6 +6,7 @@
 
 * 使用分布式锁的前提是服务能正常连接redis。
 * 在微服务架构下，一个服务可以部署多个实例，多实例之间是集群关系。
+* 本框架自动为每一个实例设置了实例ID，其值是${eureka.instance.ip-address}:${multiple-tenant.tenant}:${spring.application.name}:${server.port}，请开发者不要设置实例ID。
 
 ## 1、功能概述
 ### 1.1、实例角色服务
@@ -50,7 +51,7 @@
 | 属性名 | 必填 | 默认值 | 说明 |
 |--------|-----| ------| ---- |
 | scheduler-lock.enabled   | 否   |true  |是否启用分布式调度锁功能，默认true，即启用，如不启用则不能使用@SchedulerLock、InstanceRoleService。|
-| scheduler-lock.touch-heartbeat-interval-in-milliseconds   | 否   |15  |维持心跳(实例角色标记)时间间隔，即1.1.8中提到的定时任务每隔多久循环一次。|
+| scheduler-lock.touch-heartbeat-interval-in-milliseconds   | 否   |15000  |维持心跳(实例角色标记)时间间隔，即1.1.8中提到的定时任务每隔多久循环一次。|
 | scheduler-lock.heartbeat-expiration-duration-in-seconds   | 否   |45  |心跳(实例角色标记)过期时长，即1.1.4中提到的实例角色标记过期时长。|
 
 ### 2.2、实例角色服务示例

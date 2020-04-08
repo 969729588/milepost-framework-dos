@@ -6,6 +6,7 @@
 
 ## 1、软件环境
 * JDK1.8+
+* 已经启动了[EurekaServer](1eurekaServer.md)
 
 ## 2、所需资料
 
@@ -62,9 +63,19 @@ run.sh restart
 |spring.mail.host|否|  |邮箱服务host|
 |spring.boot.admin.notify.mail.to|否|  |告警邮件接收邮箱|
 |spring.boot.admin.discovery.ignored-services|否|  |忽略的服务，配置那些不需要监控的服务的名称，如“[test-appName-1, test-appName-1]”。|
+|spring.rabbitmq.host|    否| localhost|    rabbitmq服务ip|
+|spring.rabbitmq.port|    否| 5672|    rabbitmq服务端口|
+|spring.rabbitmq.username|    否|    guest|    rabbitmq服务用户|
+|spring.rabbitmq.password|    否|    guest|    rabbitmq服务密码|
+|track.enabled|    否|    true|    链路跟踪功能开关，true打开，false关闭|
+|track.sampling|    否|    0.1|     链路跟踪功能采样率|
 |multiple-tenant.tenant|否|default|本监控服务实例的租户，不区分大小写，不支持逗号分割，控制这个监控服务实例能监控那些服务实例。|
+
 参数中关于mail的配置是为了增加邮件告警功能的，如不配置则不能使用邮件告警功能。
-关于发送邮件服务的配置可参见[发送邮件](../../3guideForDevelopment/1commonDevelopment/4senderMail.md)
+
+* 表格中关于spring.mail.*的配置，见[发送邮件](../../3guideForDevelopment/1commonDevelopment/3senderMail.md)
+* 表格中关于spring.rabbitmq.*的配置，见[RabbitMQ](../../3guideForDevelopment/1commonDevelopment/14rabbitMQ.md)
+* 表格中关于track.*的配置，见[SpringCloud Sleuth](../../3guideForDevelopment/2distributedDevelopment/12springCloudSleuth.md)
 
 
 ## 5、验证

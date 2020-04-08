@@ -10,7 +10,7 @@
 ## 1、软件环境
 * JDK1.8+
 * Oracle或MySQL
-* 已经启动了EurekaServer
+* 已经启动了[EurekaServer](1eurekaServer.md)
 
 ## 2、所需资料
 
@@ -59,23 +59,30 @@ run.sh restart
 | ---------------------------| ---- | ------ | ------------------------------------------------------------ |
 |spring.profiles.active|是|  |配置文件环境，<br>dev：开发环境；test：测试环境；prod：生产环境|
 |server.port|是| |服务端口，建议设置为9999|
-|spring.datasource.druid.db-type|是| |数据库类型，mysql、oracle|
-|spring.datasource.druid.driver-class-name|是|   |数据库驱动类，<br>com.mysql.cj.jdbc.Driver、oracle.jdbc.driver.OracleDriver|
-|spring.datasource.druid.url|是| |连接数据库url|
-|spring.datasource.druid.username|是 |   |用户名|
-|spring.datasource.druid.password|是|    |密码|
+|spring.datasource.platform|是| |数据库类型，mysql、oracle|
+|spring.datasource.driver-class-name|是|   |数据库驱动类，<br>com.mysql.cj.jdbc.Driver、oracle.jdbc.driver.OracleDriver|
+|spring.datasource.url|是| |连接数据库url|
+|spring.datasource.username|是 |   |用户名|
+|spring.datasource.password|是|    |密码|
 |eureka.client.service-url.defaultZone|是|   |EurekaServer地址|
-|eureka.instance.ip-address|是|   |本机ip|
+|eureka.instance.ip-address|是|  |服务绑定ip，配置为服务器ip即可|
+|auth.client-detail.access-token-validity|否|7200|token的有效时间，单位秒。|
+|spring.rabbitmq.host|    否| localhost|    rabbitmq服务ip|
+|spring.rabbitmq.port|    否| 5672|    rabbitmq服务端口|
+|spring.rabbitmq.username|    否|    guest|    rabbitmq服务用户|
+|spring.rabbitmq.password|    否|    guest|    rabbitmq服务密码|
+|track.enabled|    否|    true|    链路跟踪功能开关，true打开，false关闭|
+|track.sampling|    否|    0.1|     链路跟踪功能采样率|
 |multiple-tenant.tenant|否|default|实例租户，不区分大小写，不支持逗号分割。|
 |multiple-tenant.weight|否|1|实例权重，0和正整数。|
 |multiple-tenant.label-and|否|   |与标签，格式：aa,bb,cc，多个标签支持逗号分割。|
 |multiple-tenant.label-or|否|    |或标签，格式：aa,bb,cc，多个标签支持逗号分割。|
-|auth.client-detail.access-token-validity|否|7200|token的有效时间，单位秒。|
-|eureka.instance.ip-address|是|  |服务绑定ip，配置为服务器ip即可|
 
 
+* 表格中关于spring.rabbitmq.*的配置，见[RabbitMQ](../../3guideForDevelopment/1commonDevelopment/14rabbitMQ.md)
+* 表格中关于multiple-tenant.*的配置，见[租户、标签、权重](../../3guideForDevelopment/2distributedDevelopment/2tenant.md)
+* 表格中关于track.*的配置，见[SpringCloud Sleuth](../../3guideForDevelopment/2distributedDevelopment/12springCloudSleuth.md)
 
-> 表格中关于租户、标签、权重的配置，见[租户、标签、权重](../../3guideForDevelopment/2distributedDevelopment/2tenant.md)。
 
 ## 5、验证
 

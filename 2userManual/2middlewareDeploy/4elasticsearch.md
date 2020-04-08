@@ -95,3 +95,9 @@ network.host: 192.168.223.136
 http://192.168.223.136:9200
 
 ![images/2.png](images/2.png)
+
+* 删除“zipkin*”索引下的数据
+```html
+curl "http://192.168.223.136:9200/zipkin*" \
+-X DELETE
+```

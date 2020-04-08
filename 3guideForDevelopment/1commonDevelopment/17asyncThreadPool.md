@@ -6,7 +6,7 @@
 
 | 参数名                      | 必填 | 默认值 | 说明|
 | ----------------------------|-----|-------|--------|
-|thread-pool.core-pool-size|否 |5|核心(最小)线程数|
+|thread-pool.core-pool-size|否 |5|线程池核心(最小)线程数|
 |thread-pool.max-pool-size|否 |200|线程池最大线程数|
 |thread-pool.queue-capacity|否 |10|线程队列最大线程数|
 |thread-pool.keep-alive-seconds|否 |60|线程所允许的空闲时间|

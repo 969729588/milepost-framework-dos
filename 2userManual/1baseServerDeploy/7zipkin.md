@@ -4,12 +4,12 @@
 
 > 本框架使用zipkin-server-2.21.0-exec.jar来存储和展示服务间调用的链路跟踪数据。
 
-zipkin 官网：https://zipkin.io/
-zipkin github地址：https://github.com/openzipkin/zipkin
+* zipkin 官网：https://zipkin.io/
+* zipkin github地址：https://github.com/openzipkin/zipkin
 
 ## 1、软件环境
 * JDK1.8+
-* Elasticsearch
+* Elasticsearch 6-7.x
 
 ## 2、所需资料
 
@@ -80,7 +80,6 @@ run.sh restart
 |zipkin.storage.elasticsearch.hosts   |是  |   |elasticsearch地址，如http://192.168.223.136:9200|
 |zipkin.storage.elasticsearch.index   |否   |zipkin   |存储数据的索引名称，为了很好的与SpringCloud结合，请不要更改这个参数，使用默认值即可|
 |zipkin.storage.elasticsearch.timeout   |否   |10000   |连接elasticsearch超时时间|
-
 
 
 ## 5、验证

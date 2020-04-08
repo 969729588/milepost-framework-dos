@@ -36,7 +36,7 @@ aa,bb不可以调用aa,bb,cc
 ```
 权重值为0的实例永远不会被调用。
 
-
+<!--
 ## 4、待完善的
 实现动态刷新多租户相关的属性(不依赖配置中心，不依赖消息总线)。
 
@@ -68,3 +68,4 @@ curl http://192.168.223.1:9981/example-service/milepost-actuator/bus-env \
 curl http://192.168.223.1:9981/example-service/milepost-actuator/bus-refresh \
 -H "Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODYwMTY1NzUsInVzZXJfbmFtZSI6ImFkbWluIiwianRpIjoiNDc0YjUyZTctYzAxMi00MDc0LTg2OTEtZjk1MmVmN2RjZTUwIiwiY2xpZW50X2lkIjoiY2xpZW50X2lkX3RlbmFudDEiLCJzY29wZSI6WyJhbGwiXX0.m6GdVoR-2H5vtb06fmCaHTi1wfgCBBil6aMUu-yn5kpOxXro0YBXyNoPNgkq6MBqJfnJUXNB8rXK4qhnRzN-jmdR8u--IVgHyATj1_EHaw-BaD9ptWrgw5ptw94_ZztmAfUuxRhI8tHihmKjAOPlRoOzstntHQZlADIaKxYw_hl7XXG62Z5kBKWMucNnvtYFn60eVFDJJAe4NW_mQcKbMPJ5r_ew0h7mCHEn5LaWlawyjftFYCOblo7K-BzW8vLgEQCyivii-98k40ebA1xko9eKmDM7BTGHJWhRhL9kdxBeZLJ8ygxxMHphJ9s8BQGChUgUxxdkFokPqs6t5SuFQg" \
 -X POST
+-->

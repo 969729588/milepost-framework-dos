@@ -23,7 +23,10 @@
 ## 3、日志文件位置和滚动规则
 ```xml
 <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>./logs/${spring.application.name}.log</file>
+    <encoder>
+        <pattern>${LOG_PATTERN}</pattern>
+    </encoder>
+    <file>${LOG_FILE}</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
         <fileNamePattern>./logs/${spring.application.name}-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
         <MaxHistory>365</MaxHistory>
@@ -41,21 +44,21 @@
 <configuration>
 	<springProperty name="spring.application.name" source="spring.application.name"/>
 	<springProperty name="eureka.instance.instance-id" source="eureka.instance.instance-id"/>
+
 	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
 	<property name="LOG_FILE" value="./logs/${spring.application.name}.log"/>
-	<!--开发环境-->
+
 	<springProfile name="dev">
-		<property name="LOG_PATTERN" value="[${eureka.instance.instance-id}] %yellow(%d{yyyy-MM-dd HH:mm:ss.SSS}) - [%highlight(%-5level)] [%green(%-50logger{50}): %blue(%-4line)] - %msg%n"/>
+		<property name="LOG_PATTERN" value="[${eureka.instance.instance-id}] [%yellow(%d{yyyy-MM-dd HH:mm:ss.SSS})] [%highlight(%-5level)] [%X{X-B3-TraceId:-},%X{X-B3-SpanId:-}] [%green(%-50logger{50}): %blue(%-4line)] - %msg%n"/>
 		<include resource="logback-dev.xml"/>
 	</springProfile>
-	<!--测试环境-->
 	<springProfile name="test">
-		<property name="LOG_PATTERN" value="[${eureka.instance.instance-id}] %d{yyyy-MM-dd HH:mm:ss.SSS} - [%-5level] [%-50logger{50}: %-4line] - %msg%n"/>
+		<property name="LOG_PATTERN" value="[${eureka.instance.instance-id}] [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] [%X{X-B3-TraceId:-},%X{X-B3-SpanId:-}] [%-50logger{50}: %-4line] - %msg%n"/>
 		<include resource="logback-tes.xml"/>
 	</springProfile>
-	<!--生产环境-->
 	<springProfile name="prod">
-		<property name="LOG_PATTERN" value="[${eureka.instance.instance-id}] %d{yyyy-MM-dd HH:mm:ss.SSS} - [%-5level] [%-50logger{50}: %-4line] - %msg%n"/>
+		<property name="LOG_PATTERN" value="[${eureka.instance.instance-id}] [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] [%X{X-B3-TraceId:-},%X{X-B3-SpanId:-}] [%-50logger{50}: %-4line] - %msg%n"/>
 		<include resource="logback-prod.xml"/>
 	</springProfile>
 </configuration>
@@ -80,6 +83,20 @@ curl http(s)://${eureka.instance.ip-address}:${server.port}/${server.servlet.con
 -X POST \
 -d '{"configuredLevel":"${日志级别}"}'
 ```
+
+## 6、日志中的信息
+```html
+[192.168.223.1:tenant1:authentication-ui:9990 ] [2020-04-09 03:26:54.761] [INFO ] [ad7010d1d5b97056,ad7010d1d5b97056] [com.milepost.core.lock.InstanceRoleHandleScheduler: 185 ] - 服务名称=AUTHENTICATION-UI，...
+[1                                            ] [2                      ] [3    ] [4,5                              ] [6                                                       ] - 7
+```
+1号位置：实例ID，具体见[分布式锁](../../3guideForDevelopment/2distributedDevelopment/3lock.md)
+2号位置：日志时间。
+3号位置：日志级别。
+4号位置：TraceId，具体见[SpringCloud Sleuth](../../3guideForDevelopment/2distributedDevelopment/12springCloudSleuth.md)
+5号位置：SpanId，具体见[SpringCloud Sleuth](../../3guideForDevelopment/2distributedDevelopment/12springCloudSleuth.md)
+6号位置：打印日志的代码位置。
+7号位置：日志信息。
+
 
 
 

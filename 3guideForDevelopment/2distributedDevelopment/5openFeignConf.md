@@ -67,7 +67,7 @@ feign:
 ```yaml
 feign:
   hystrix:
-    : true
+    enabled: true
 ```
 由于feign的底层是ribbon在支持，所以推荐通过配置ribbon来改变feign，
 关于feign，框架只配置了feign.hystrix.enabled=true，

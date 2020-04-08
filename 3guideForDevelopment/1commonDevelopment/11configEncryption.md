@@ -16,5 +16,5 @@ ENC(oV1vvxqtTJHlZiwivLOAbPNRyZUb4bBv)
 ```
 把返回的结果配置在yml中即可，如：
 ```properties
-spring.datasource.druid.password=ENC(oV1vvxqtTJHlZiwivLOAbPNRyZUb4bBv)
+spring.datasource.password=ENC(oV1vvxqtTJHlZiwivLOAbPNRyZUb4bBv)
 ```

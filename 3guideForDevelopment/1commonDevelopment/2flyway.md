@@ -26,7 +26,7 @@ V{项目版本号}.{数据库版本号}__{版本描述}.sql
 * 版本描述：对版本的描述
 * 数据库版本号和版本描述之间用双下划线分隔
 
-脚本文件存储在项目的resource/db/{spring.datasource.druid.db_type}目录下，其中{spring.datasource.druid.db_type}支持mysql、oracle。
+脚本文件存储在项目的resource/db/{spring.datasource.platform}目录下，其中{spring.datasource.platform}支持mysql、oracle。
 
 ## 3、起初使用flyway的例子
 
@@ -142,7 +142,9 @@ CREATE TABLE student (
 
 * 在yml增加如下配置项
 ```yaml
-spring.flyway.baseline-version=1.0.0.100.1
+spring:
+  flyway:
+    baseline-version: 1.0.0.100.1
 ```
 设置flyway基线版本与初始化脚本的版本号一致，这样1.0.0.100.1和以前的版本就不会被flyway执行。
 

@@ -255,3 +255,6 @@ hystrix:
             timeoutInMilliseconds: 10000
 ```
 
+            #
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+

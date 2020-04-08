@@ -1,8 +1,17 @@
 # milepost-framework
 
+> milepost-framework 是一套分布式微服务框架，基于SpringCloud的Greenwich.RELEASE版本构建，对应的SpringBoot版本是2.1.0。<br>
+框架在SpringCloud基础上增加了分布式微服务架构下开发常用的组件和功能；<br>
+并对一些复杂的配置进行封装，使开发者需要做的配置减少，使开发变的简单快速；<br>
+
+**下面通过认证服务登录的流程图来说明框架整体的结构。**
+![images/认证服务登录流程图.bmp](1summary/images/认证服务登录流程图-0409-1.bmp)
+
+
 > 本文档包含milepost-framework框架的所有资料，阅读本文档需要了解微服务、 
 分部署、集群、SpringCloud、SpringBoot、相关知识。
-阅读时需要先读完**概述章节**，然后可以按需独立阅读。
+阅读时需要先读完 **概述章节** ，然后可以按需独立阅读。
+
 
 # 1、概述
 1.1、[术语表](1summary/1term.md)<br>
@@ -13,10 +22,12 @@
 # 2.1、基础服务部署
 2.1.1、[EurekaServer部署](2userManual/1baseServerDeploy/1eurekaServer.md)<br>
 2.1.2、[JWT服务部署](2userManual/1baseServerDeploy/2jwtServer.md)<br>
-2.1.3、[分布式事务管理端部署](2userManual/1baseServerDeploy/3tx-lcn-manager.md)<br>
-2.1.4、[Hystrix Turbine监控服务部署](2userManual/1baseServerDeploy/4milepost-turbine.md)<br>
-2.1.5、[SpringBoot Admin监控服务部署](2userManual/1baseServerDeploy/5milepost-admin.md)<br>
-2.1.6、[Zipkin服务部署](2userManual/1baseServerDeploy/6zipkin.md)<br>
+2.1.3、[认证服务部署](2userManual/1baseServerDeploy/3authentication.md)<br>
+2.1.4、[分布式事务管理端部署](2userManual/1baseServerDeploy/4tx-lcn-manager.md)<br>
+2.1.5、[Hystrix Turbine监控服务部署](2userManual/1baseServerDeploy/5milepost-turbine.md)<br>
+2.1.6、[SpringBoot Admin监控服务部署](2userManual/1baseServerDeploy/6milepost-admin.md)<br>
+2.1.7、[Zipkin服务部署](2userManual/1baseServerDeploy/7zipkin.md)<br>
+
 
 # 2.2、中间件部署
 2.2.1、[Redis](2userManual/2middlewareDeploy/1redis.md)<br>
@@ -28,27 +39,26 @@
 
 # 3、开发指南
 ## 3.1、常规开发
-<!--3.1.1、[使用本框架构建一个项目并打包发布到Linux上](3guideForDevelopment/1commonDevelopment/1projectExample.md)<br>-->
-3.1.2、[框架日志](3guideForDevelopment/1commonDevelopment/2logger.md)<br>
-3.1.3、[Flyway](3guideForDevelopment/1commonDevelopment/3flyway.md)<br>
-3.1.4、[发送邮件](3guideForDevelopment/1commonDevelopment/4senderMail.md)<br>
-3.1.5、[Mybatis缓存](3guideForDevelopment/1commonDevelopment/5mybatisCache.md)<br>
-3.1.6、[Mybatis Generator](3guideForDevelopment/1commonDevelopment/6mybatisGenerator.md)<br>
-3.1.7、[Swagger](3guideForDevelopment/1commonDevelopment/7swagger.md)<br>
-3.1.8、[获取有效的token](3guideForDevelopment/1commonDevelopment/8getToken.md)<br>
-3.1.9、[请求被oauth保护的接口并在接口中获取用户信息](3guideForDevelopment/1commonDevelopment/9auth.md)<br>
-3.1.10、[RestTemplate](3guideForDevelopment/1commonDevelopment/10restTemplate.md)<br>
-3.1.11、[单元测试](3guideForDevelopment/1commonDevelopment/11junitTest.md)<br>
-3.1.12、[配置文件加密](3guideForDevelopment/1commonDevelopment/12configEncryption.md)<br>
-3.1.13、[多数据源](3guideForDevelopment/1commonDevelopment/13dynamicDs.md)<br>
-3.1.14、[ActiveMQ](3guideForDevelopment/1commonDevelopment/14activeMQ.md)<br>
-3.1.15、[RabbitMQ](3guideForDevelopment/1commonDevelopment/15rabbitMQ.md)<br>
-3.1.16、[基于Redis的集中式缓存](3guideForDevelopment/1commonDevelopment/16redis.md)<br>
-3.1.17、[优雅停止服务](3guideForDevelopment/1commonDevelopment/17gracefullyStop.md)<br>
-3.1.18、[异步线程池](3guideForDevelopment/1commonDevelopment/18asyncThreadPool.md)<br>
-3.1.19、[自定义异常页面](3guideForDevelopment/1commonDevelopment/19customExPage.md)<br>
-3.1.20、[文件上传](3guideForDevelopment/1commonDevelopment/20fileupload.md)<br>
-3.1.21、[定制Tomcat](3guideForDevelopment/1commonDevelopment/21customizerTomcat.md)<br>
+3.1.1、[框架日志](3guideForDevelopment/1commonDevelopment/1logger.md)<br>
+3.1.2、[Flyway](3guideForDevelopment/1commonDevelopment/2flyway.md)<br>
+3.1.3、[发送邮件](3guideForDevelopment/1commonDevelopment/3senderMail.md)<br>
+3.1.4、[Mybatis缓存](3guideForDevelopment/1commonDevelopment/4mybatisCache.md)<br>
+3.1.5、[Mybatis Generator](3guideForDevelopment/1commonDevelopment/5mybatisGenerator.md)<br>
+3.1.6、[Swagger](3guideForDevelopment/1commonDevelopment/6swagger.md)<br>
+3.1.7、[获取有效的token](3guideForDevelopment/1commonDevelopment/7getToken.md)<br>
+3.1.8、[请求被oauth保护的接口并在接口中获取用户信息](3guideForDevelopment/1commonDevelopment/8auth.md)<br>
+3.1.9、[RestTemplate](3guideForDevelopment/1commonDevelopment/9restTemplate.md)<br>
+3.1.10、[单元测试](3guideForDevelopment/1commonDevelopment/10junitTest.md)<br>
+3.1.11、[配置文件加密](3guideForDevelopment/1commonDevelopment/11configEncryption.md)<br>
+3.1.12、[多数据源](3guideForDevelopment/1commonDevelopment/12dynamicDs.md)<br>
+3.1.13、[ActiveMQ](3guideForDevelopment/1commonDevelopment/13activeMQ.md)<br>
+3.1.14、[RabbitMQ](3guideForDevelopment/1commonDevelopment/14rabbitMQ.md)<br>
+3.1.15、[基于Redis的集中式缓存](3guideForDevelopment/1commonDevelopment/15redis.md)<br>
+3.1.16、[优雅停止服务](3guideForDevelopment/1commonDevelopment/16gracefullyStop.md)<br>
+3.1.17、[异步线程池](3guideForDevelopment/1commonDevelopment/17asyncThreadPool.md)<br>
+3.1.18、[自定义异常页面](3guideForDevelopment/1commonDevelopment/18customExPage.md)<br>
+3.1.19、[文件上传](3guideForDevelopment/1commonDevelopment/19fileupload.md)<br>
+3.1.20、[定制Tomcat](3guideForDevelopment/1commonDevelopment/20customizerTomcat.md)<br>
 
 
 ## 3.2、分布式开发
@@ -66,10 +76,17 @@
 3.2.12、[SpringCloud Sleuth](3guideForDevelopment/2distributedDevelopment/12springCloudSleuth.md)<br>
 
 
-<!--
-# 4、其他
-## 4.1、框架测试
--->
+## 3.3、使用本框架构建的开发示例
+3.3.1、[搭建开发环境](3guideForDevelopment/3example/1buildDevEnv.md)<br>
+3.3.2、[构建一个项目并打包发布到Linux上](3guideForDevelopment/3example/2projectExample.md)<br>
+
+## 4、规划中内容
+* 更改EurekaServer页面服务实例的多租户相关配置实时生效，可能会通过配置中心+消息总线方案来解决，也可能利用actuator的env和refresh端点动态修改刷新配置来解决。
+* 安全相关，如RESTful API限速、SQL注入漏洞、CSRF跨站请求伪造等等。
+* Docker、k8s支持。
+* Flyway的企业版才能支持Oracle11G，可能会改成使用SpringBoot自己的数据库初始化工具，具体见https://docs.spring.io/spring-boot/docs/2.1.10.RELEASE/reference/html/howto-database-initialization.html#howto-initialize-a-database-using-spring-jdbc。
+* 框架基准测试。
+
 
 <!--
 # 5、框架参考
@@ -80,29 +97,18 @@
 -->
 
 <!--
-1、5年以上软件架构设计工作经验，精通微服务架构设计者优先；
-2、5年以上软件开发相关背景（Java， Python 方向）；
-3、3年以上 DevOps 工作经验；
-4、熟悉Docker、Kubernetes、Gitlab、Jenkins、Nginx、Redis、MySQL、Ansible、Zabbix、消息队列等相关工具及软件；
-5、了解敏捷开发方法论；
-6、良好的英文沟通能力；
--->
-
-<!--
 需要补充的文档：
-License
-首页那个大图片需要更改一下，
+1、##3.3、使用本框架构建的开发示例
+
 
 -->
 
 <!--
-需要研究的：
-1、配置中心，动态刷新配置。
-2、安全相关
-3、docker，k8s，自动化部署，微服务管控，
-4、利用actuator的env和refresh端点实现动态修改多租户相关配置
-5、flyway的企业版才能支持oracle11G
-使用springboot自己的数据库初始化工具
-https://docs.spring.io/spring-boot/docs/2.1.10.RELEASE/reference/html/howto-database-initialization.html#howto-initialize-a-database-using-spring-jdbc
--->
+需要增加的功能
 
+-->
+<!--
+ButList
+1、[WARN ] [o.s.s.oauth2.provider.endpoint.TokenEndpoint      : 169 ] - Handling error: ClientAbortException, java.io.IOException: 断开的管道
+
+-->

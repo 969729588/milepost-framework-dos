@@ -56,6 +56,17 @@ run.sh restart
 |server.port|否|8761|服务端口|
 |eureka.instance.ip-address|是|  |服务绑定ip，配置为服务器ip即可|
 |eureka.server.enable-self-preservation|    否| true|    开启自我保护机制，true：开启；false：关闭|
+|spring.rabbitmq.host|    否| localhost|    rabbitmq服务ip|
+|spring.rabbitmq.port|    否| 5672|    rabbitmq服务端口|
+|spring.rabbitmq.username|    否|    guest|    rabbitmq服务用户|
+|spring.rabbitmq.password|    否|    guest|    rabbitmq服务密码|
+|track.enabled|    否|    true|    链路跟踪功能开关，true打开，false关闭|
+|track.sampling|    否|    0.1|     链路跟踪功能采样率|
+
+
+* 表格中关于spring.rabbitmq.*的配置，见[RabbitMQ](../../3guideForDevelopment/1commonDevelopment/14rabbitMQ.md)
+* 表格中关于track.*的配置，见[SpringCloud Sleuth](../../3guideForDevelopment/2distributedDevelopment/12springCloudSleuth.md)
+
 
 ## 5、验证
 
