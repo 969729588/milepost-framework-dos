@@ -1,6 +1,6 @@
 # milepost-framework
 
-> milepost-framework 是一套分布式微服务框架，基于SpringCloud的Greenwich.RELEASE版本构建，对应的SpringBoot版本是2.1.0。<br>
+> milepost-framework 是一套分布式微服务框架，基于SpringCloud的Greenwich.RELEASE版本构建，对应的SpringBoot版本是2.1.0.RELEASE。<br>
 框架在SpringCloud基础上增加了分布式微服务架构下开发常用的组件和功能；<br>
 并对一些复杂的配置进行封装，使开发者需要做的配置减少，使开发变的简单快速。<br>
 
@@ -9,8 +9,8 @@
 
 
 > 本文档包含milepost-framework框架的所有资料，阅读本文档需要了解微服务、 
-分部署、集群、SpringCloud、SpringBoot、相关知识。
-阅读时需要先读完**概述**章节，然后可以按需独立阅读。
+分布式、集群、SpringCloud、SpringBoot相关知识。
+阅读时需要先读完 **概述** 章节，然后可以按需独立阅读。
 
 
 # 1、概述
