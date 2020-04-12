@@ -83,7 +83,7 @@
 3.3.2、[构建一个项目并打包发布到Linux上](3guideForDevelopment/3example/2projectExample.md)<br>
 
 ## 4、规划中内容
-* 更改EurekaServer页面服务实例的多租户相关配置实时生效，可能会通过配置中心+消息总线方案来解决，也可能利用actuator的env和refresh端点动态修改刷新配置来解决。
+* 更改认证或EurekaServer页面服务实例的多租户相关配置实时生效，可能会通过配置中心+消息总线方案来解决，也可能利用actuator的env和refresh端点动态修改刷新配置来解决。
 * 安全相关，如RESTful API限速、SQL注入漏洞、CSRF跨站请求伪造等等。
 * Docker、k8s支持。
 * Flyway的企业版才能支持Oracle11G，可能会改成使用SpringBoot自己的数据库初始化工具，具体见https://docs.spring.io/spring-boot/docs/2.1.10.RELEASE/reference/html/howto-database-initialization.html#howto-initialize-a-database-using-spring-jdbc。
