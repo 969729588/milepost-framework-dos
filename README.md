@@ -4,7 +4,9 @@
 框架在SpringCloud基础上增加了分布式微服务架构下开发常用的组件和功能；<br>
 并对一些复杂的配置进行封装，使开发者需要做的配置减少，使开发变的简单快速。<br>
 
-> 线上演示 [http://47.92.206.179:9990/authentication-ui/login](http://47.92.206.179:9990/authentication-ui/login)，源码暂时没公开。
+> 线上演示 [http://47.92.206.179:9990/authentication-ui/login](http://47.92.206.179:9990/authentication-ui/login)，
+
+> 源码 [https://github.com/969729588/milepost-framework](https://github.com/969729588/milepost-framework)，暂时没公开。
 
 **下面通过认证服务登录的流程图来说明框架整体的结构**
 ![images/认证服务登录流程图.bmp](1summary/images/认证服务登录流程图-0409-1.bmp)
